@@ -5,7 +5,7 @@
 - MySQL: Base de datos relacional para almacenar datos de categorías, marcas y productos.
 
 # Funcionalidades Actuales
-- Gestión de Categorías: Endpoint para crear
+- Gestión de Categorías: Endpoint para crear, leer y actualizar CATEGORIAS
 
 # Planes Futuros
 - Autenticación para proteger determinados endpoints
