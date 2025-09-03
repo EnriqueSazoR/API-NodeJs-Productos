@@ -43,4 +43,18 @@ model Producto {
   marca Marca @relation(fields: [marcaId], references: [id])
 }
 
+enum Rol {
+  ADMIN
+  CLIENTE
+}
+
+model Usuario {
+  id          Int @id @default(autoincrement())
+  usuario     String @unique
+  correo      String @unique
+  password    String
+  rol         Rol @default(CLIENTE)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
 
