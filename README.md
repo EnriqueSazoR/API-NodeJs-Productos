@@ -7,7 +7,8 @@
 # Funcionalidades Actuales
 - Gestión de Categorías: Endpoints para crear, leer y actualizar
 - Gestión de Marcas: Endpoints para crear, leer y actualizar
-- Gestión de Productos: Endpoint para crear
+- Gestión de Productos: Endpoint para crear, leer y actualizar
+- Gestión Autorización: Endpoint para registro
 
 # Planes Futuros
 - Autenticación para proteger determinados endpoints
