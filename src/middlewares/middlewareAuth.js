@@ -48,7 +48,7 @@ export const VerificarToken = async (req, res, netx) => {
   const header = req.header("Authorization") || "";
   const token = header.split(" ")[1];
   if (!token) {
-    return res.status(401).json({ error: "No se proporcionó Token" });
+    return res.status(401).json({ error: "Debe inciar sesión, para utilizar este recurso" });
   }
   try {
     const payload = jwt.verify(token, secretKey);
