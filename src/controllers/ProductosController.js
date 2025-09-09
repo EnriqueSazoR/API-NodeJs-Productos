@@ -49,7 +49,7 @@ export const PostProducto = async (req, res) => {
   }
 };
 
-// Método para mostrar todas las categorias
+// Método para mostrar todos los productos
 export const GetProdutcos = async (req, res) => {
   try {
     const listaProductos = await prisma.Producto.findMany({

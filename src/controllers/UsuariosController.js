@@ -9,7 +9,7 @@ export const buscarProducto = async (req, res) => {
     const productoBD = await prisma.Producto.findFirst({
       where: {
         nombre: {
-          equals: nombre
+          equals: nombre,
         },
       },
       select: {
@@ -30,11 +30,64 @@ export const buscarProducto = async (req, res) => {
   }
 };
 
+
+
+// 1. Método para buscar productos por marca
+export const buscarProductoPorMarca = async (req, res) => {
+  try {
+    const { nombre } = req.body;
+    const marcaBD = await prisma.Marca.findMany({
+      where: { nombre },
+      include: {
+        productos: {
+          select: {
+            nombre: true,
+            stock: true,
+          },
+        },
+      },
+    });
+
+    const productos = marcaBD.flatMap((m) => m.productos);
+
+    res.status(200).json({
+      respuesta: `Productos relaciondos con ${nombre}`,
+      productos,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Error en servidor" });
+  }
+};
+
+// 2. Método para buscar producto por categoria
+export const buscarProductoPorCategoria = async (req, res) => {
+  try {
+    const { nombre } = req.body;
+    const categoriaBD = await prisma.Categoria.findMany({
+      where: { nombre },
+      include: {
+        productos: {
+          select: {
+            nombre: true,
+            stock: true,
+          },
+        },
+      },
+    });
+
+    const productos = categoriaBD.flatMap((c) => c.productos);
+    res.status(200).json({
+      respuesta: `Productos relaciondos con ${nombre}`,
+      productos,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Error en el servidor" });
+  }
+};
+
 // Metodos a futuro
-
-// 1. Método para buscar marcas
-
-// 2. Método para buscar categoria
 
 // 3. Método para comprar
 
