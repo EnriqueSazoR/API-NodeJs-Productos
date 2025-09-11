@@ -1,8 +1,9 @@
 // Controlador para usuarios
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcrypt";
 const prisma = new PrismaClient();
 
-// Método para buscar productos
+// 1. Método para buscar productos
 export const buscarProducto = async (req, res) => {
   try {
     const { nombre } = req.body;
@@ -30,9 +31,7 @@ export const buscarProducto = async (req, res) => {
   }
 };
 
-
-
-// 1. Método para buscar productos por marca
+// 2. Método para buscar productos por marca
 export const buscarProductoPorMarca = async (req, res) => {
   try {
     const { nombre } = req.body;
@@ -60,7 +59,7 @@ export const buscarProductoPorMarca = async (req, res) => {
   }
 };
 
-// 2. Método para buscar producto por categoria
+// 3. Método para buscar producto por categoria
 export const buscarProductoPorCategoria = async (req, res) => {
   try {
     const { nombre } = req.body;
@@ -87,8 +86,52 @@ export const buscarProductoPorCategoria = async (req, res) => {
   }
 };
 
-// Metodos a futuro
+// 4. Método para comprar
 
-// 3. Método para comprar
+// 5. Actualizar credenciales {nombre de usuario, password}
+export const actualizarCredenciales = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { usuario, password } = req.body;
 
-// 4. Actualizar credenciales {nombre de usuario, password}
+    // Buscar el Id del usuario
+    const buscarUsuario = await prisma.Usuario.findUnique({
+      where: { id: parseInt(id) },
+    });
+    if (!buscarUsuario) {
+      return res.status(400).json({ error: "No se encontró el usuario" });
+    }
+
+    // Validar que no exista el nombre de usuario
+    const usuarioDuplicado = await prisma.Usuario.findUnique({
+      where: { usuario },
+    });
+    if (usuarioDuplicado) {
+      return res
+        .status(400)
+        .json({ error: "El nombre de usuario ingresado ya existe" });
+    }
+
+    // Hashear la nueva contraseña
+    const nuevaContraseña = await bcrypt.hash(password, 10);
+
+    const credencialesActualizadas = await prisma.Usuario.update({
+      where: { id: parseInt(id) },
+      data: {
+        usuario: usuario ?? buscarUsuario.usuario,
+        password: nuevaContraseña,
+      },
+      select: {
+        usuario: true,
+      },
+    });
+
+    res.status(200).json({
+      completo: "Actualización de usuario correcta",
+      credencialesActualizadas,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Error en el servidor" });
+  }
+};

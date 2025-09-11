@@ -13,7 +13,7 @@ app.use('/categorias', categoriasRoutes)
 app.use('/marcas', marcasRoutes)
 app.use('/productos', productosRoutes)
 app.use('/auth', authRoutes)
-app.use('/auth', usuarioRoutes)
+app.use('/user', usuarioRoutes)
 
 
 export default app

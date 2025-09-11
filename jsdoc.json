@@ -1,0 +1,12 @@
+{
+    "source" : {
+        "include" : ["src/controllers"],
+        "includePattern" : ".js$"
+    },
+    "opts" : {
+        "destination" : "./docs",
+        "resource" : true,
+        "verbose" : true
+    },
+    "plugins" : []
+}
