@@ -1,4 +1,4 @@
-// Archivo para los metodos de categorias
+
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
@@ -19,7 +19,7 @@ const prisma = new PrismaClient();
  * 
  * // Response 200
  * {  
- *    "mensaje" : "categporía creada"
+ *    "mensaje" : "categoría creada"
  * }
  * 
  * // Response 400

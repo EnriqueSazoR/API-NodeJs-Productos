@@ -478,6 +478,380 @@
     
 
     
+    <h4 class="name" id="GetProdutcos"><span class="type-signature">(async) </span>GetProdutcos<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Obtener todos los productos
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ProductosController.js.html">ProductosController.js</a>, <a href="ProductosController.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Lista de productos
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Response 200{nombre:"nnn","categoria:"nnn",marca:"nnn"},{nombre:"nnn1","categoria:"nnn1",marca:"nnn1"}// Response 500{   error : "Error en el servidor"}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="Login"><span class="type-signature">(async) </span>Login<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Iniciar Sesión
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud debe incluir {correo, password}</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta enviando el resultado</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AuthController.js.html">AuthController.js</a>, <a href="AuthController.js.html#line78">line 78</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error- 200 'OK' --> Bienvenido y agrega token- 400 'Bad Request' --> Si no se ingresan las credenciales- 401 'Unauthorized' --> Si las credenciales no son validas- 500 'Internal Server Error' --> Si hay un error en el servidor
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{   "correo" : "LuisDev",   "password" : "Dev25$$y"  }</code></pre>
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="PostCategoria"><span class="type-signature">(async) </span>PostCategoria<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
     
 
@@ -655,7 +1029,7 @@
 
     <h5>Example</h5>
     
-    <pre class="prettyprint"><code>// Body esperado:{   "nombre" : "Laptops"}// Response 200{     "mensaje" : "categporía creada"}// Response 400{   "error" : "Categoría Laptops ya existe"}</code></pre>
+    <pre class="prettyprint"><code>// Body esperado:{   "nombre" : "Laptops"}// Response 200{     "mensaje" : "categoría creada"}// Response 400{   "error" : "Categoría Laptops ya existe"}</code></pre>
 
 
 
@@ -843,6 +1217,193 @@
     <h5>Example</h5>
     
     <pre class="prettyprint"><code>// Body esperado:{   "nombre" : "Nike"}// Response 200{     "mensaje" : "marca creada"}// Response 400{   "error" : "Marca Nike ya existe"}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="PostProducto"><span class="type-signature">(async) </span>PostProducto<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Crear un producto nuevo
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud (Express Request)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta (Express Reponse)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ProductosController.js.html">ProductosController.js</a>, <a href="ProductosController.js.html#line5">line 5</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Body esperado;{   "nombre" : "Xbox Series X",   "stock" : 2,   "categoria" : "Consolas",   "marca" : "Microsoft"}// Response 200{    mensaje : "Producto creado" }// Response 400}   error : "El producto ya existe"  }// Response 404{   error : "Categoría no encontrada" o "Marca no econtrada"}</code></pre>
 
 
 
@@ -1463,6 +2024,1200 @@
 
 
         
+            
+
+    
+
+    
+    <h4 class="name" id="PutProducto"><span class="type-signature">(async) </span>PutProducto<span class="signature">(res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Actualizar un producto
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req.body</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud Express</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>req.params</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Parámetros de la URL
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">ID del producto a actualizar</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta Express</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ProductosController.js.html">ProductosController.js</a>, <a href="ProductosController.js.html#line128">line 128</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>// Response 200{   {exito : "Producto Actualizado"},   "nombre" : "nnn",   "stock" : 00,   "categoria" : "nnn",   "marca" : "nnn",   "fechaActualizacion" : "yyyy/mm/dd"}// </code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="Registro"><span class="type-signature">(async) </span>Registro<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Registro de un nuevo usuario
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud debe contener {usuario, correo, password}un middleware valida que los datos ingresados cumplan con los requerimientos</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Ojeto de respuesta para enviar el resultado</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="AuthController.js.html">AuthController.js</a>, <a href="AuthController.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error- 200 'Ok' --> Usuario creado exitosamente y token generado- 400 'Bad Request' --> Si el correo ya está en uso- 500 'Internal Server Error' --> Si ocurre un error en el servidor
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{   "usuario" : "LuisDev",   "correo" : "luis@gmail.com",   "password" : "Dev25$$y"  }</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="actualizarCredenciales"><span class="type-signature">(async) </span>actualizarCredenciales<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Actualizar credenciales del usuario
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud tomando como parametros {usuario, password}un middleware valida que los datos ingresados cumplan con los estandares requeridos</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="UsuariosController.js.html">UsuariosController.js</a>, <a href="UsuariosController.js.html#line153">line 153</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error- 200 'OK' --> Si la actualización es correcta- 400 'Bad Request' --> Si el usuario es incorrecto o se intenta ingresar un duplicado- 500 'Internal Server Error' --> Si hay un problema con el servidor
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{   "usuario" : "lsazoo":   "password" : "WebDev87#"}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buscarProducto"><span class="type-signature">(async) </span>buscarProducto<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Buscar un producto por nombre
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud tomando como parametro {nombre}</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="UsuariosController.js.html">UsuariosController.js</a>, <a href="UsuariosController.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error- 200 'OK' --> Coincidencia del producto encontrado- 400 'Bad Request' --> Si no se encuentra el producto- 500 'Internal Server Error' --> Si hay un error en el servidor
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{   "nombre" : "Samsung Galaxy Tab",   "stock" : 1}</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buscarProductoPorCategoria"><span class="type-signature">(async) </span>buscarProductoPorCategoria<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Busca productos por categoría
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud tomando como parametro la categoría</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="UsuariosController.js.html">UsuariosController.js</a>, <a href="UsuariosController.js.html#line102">line 102</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error- 200 'OK' --> Lista de productos- 500 'Internal Server Error' --> Si hay problemas en el servidor
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{respuesta : "Productos relacionados con {categoría}"},     {         "nombre" : "nnn",         "stock" : 00     },     {         "nombre" : "nnn1",         "stock" : 11     },</code></pre>
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="buscarProductoPorMarca"><span class="type-signature">(async) </span>buscarProductoPorMarca<span class="signature">(req, res)</span><span class="type-signature"> &rarr; {json}</span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Busca productos por marca
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>req</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de solicitud tomando como parametro la marca</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>res</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Objeto de respuesta</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="UsuariosController.js.html">UsuariosController.js</a>, <a href="UsuariosController.js.html#line51">line 51</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    Mensaje de confirmación o error- 200 'OK' --> Lista de productos- 500 'Internal Server Error' --> Si hay problemas en el servidor
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">json</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>{respuesta : "Productos relacionados con {marca}"},     {         "nombre" : "nnn",         "stock" : 00     },     {         "nombre" : "nnn1",         "stock" : 11     },</code></pre>
+
+
+
+        
     
 
     
@@ -1478,13 +3233,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GetCategorias">GetCategorias</a></li><li><a href="global.html#GetMarcas">GetMarcas</a></li><li><a href="global.html#PostCategoria">PostCategoria</a></li><li><a href="global.html#PostMarca">PostMarca</a></li><li><a href="global.html#PutCategoria">PutCategoria</a></li><li><a href="global.html#PutMarca">PutMarca</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GetCategorias">GetCategorias</a></li><li><a href="global.html#GetMarcas">GetMarcas</a></li><li><a href="global.html#GetProdutcos">GetProdutcos</a></li><li><a href="global.html#Login">Login</a></li><li><a href="global.html#PostCategoria">PostCategoria</a></li><li><a href="global.html#PostMarca">PostMarca</a></li><li><a href="global.html#PostProducto">PostProducto</a></li><li><a href="global.html#PutCategoria">PutCategoria</a></li><li><a href="global.html#PutMarca">PutMarca</a></li><li><a href="global.html#PutProducto">PutProducto</a></li><li><a href="global.html#Registro">Registro</a></li><li><a href="global.html#actualizarCredenciales">actualizarCredenciales</a></li><li><a href="global.html#buscarProducto">buscarProducto</a></li><li><a href="global.html#buscarProductoPorCategoria">buscarProductoPorCategoria</a></li><li><a href="global.html#buscarProductoPorMarca">buscarProductoPorMarca</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Sep 11 2025 00:20:47 GMT-0600 (hora estándar central)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Sep 11 2025 20:52:57 GMT-0600 (hora estándar central)
 </footer>
 
 <script> prettyPrint(); </script>
