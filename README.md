@@ -11,9 +11,21 @@
 - Gestión Autorización: Endpoints para registro y login
 - Gestión de Usuarios: Endpoints para buscar productos -> por nombre, categoría y marca
 - Documentación de API usando JSDoc
+  
 # JSDoc
-<img width="1913" height="731" alt="1" src="https://github.com/user-attachments/assets/cd0e4811-8c11-483d-8899-0fc3ddb9b6b7" />
+<img width="1363" height="631" alt="1" src="https://github.com/user-attachments/assets/74b886ec-19f8-41cf-b75e-c87f822fdf98" />
 
-# Planes Futuros
+# Dependencias Instalados
+- prisma/client
+- bcrypt
+- express
+- express-validator
+- jsonwebtoken
+- mysql
+- jsdoc
+- nodemon
+- prisma
+
+# Próximas Implementaciones
 - Compras
 - Envío de correos utilizando "Nodemailer"
